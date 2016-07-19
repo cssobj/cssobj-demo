@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CSSOBJ DEMO</title>
+    <!--[if lte IE 9]>
+        <script type="text/javascript" src="http://cdn.staticfile.org/es5-shim/3.4.0/es5-shim.min.js"></script>
+        <script type="text/javascript" src="http://cdn.staticfile.org/json3/3.3.2/json3.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" src="./node_modules/cssobj/dist/cssobj.iife.js"></script>
+    <script type="text/javascript" src="./node_modules/cssobj-plugin-value-default-unit/dist/cssobj-plugin-value-default-unit.iife.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+  </head>
+  <body>
+    <h1>cssobj demo page</h1>
+
+    <h3>DEMO 1.Box size adjustment</h3>
+    <div>
+      <div class="demo1_con">
+        <div class="demo1_input">
+          <label>constrain:<input style="width:20px" type="checkbox" onclick="toggleDemo1Height()"></label>
+          width: <input type="number" onkeyup="demo1obj['.box'].width = this.value; demo1css.update()" value="30">
+          <span>height: <input id="demo1_height" type="number" onkeyup="demo1obj['.box'].height = this.value; demo1css.update()" value="30"></span>
+        </div>
+        <div class="demo1area">
+          <div class="demo1_box"></div>
+          <div class="demo1_box"></div>
+          <div class="demo1_box"></div>
+          <div class="demo1_box"></div>
+          <div class="demo1_box"></div>
+          <br clear="both">
+        </div>
+        <div>cssText from above CSSOM</div>
+        <textarea id="demo1_text" readonly></textarea>
+      </div>
+    </div>
+    <script type="text/javascript" src="demo1.js"></script>
+
+    <hr>
+    <h3>DEMO 2.child selector</h3>
+    <div>
+      <div class="demo2_con">
+        <div class="demo2_input">
+          <div>CSS</div>
+          <textarea id="demo2_obj" readonly style="height:222px"></textarea>
+          <div>HTML</div>
+          <textarea id="demo2_html" readonly>
+<ul>
+  <li><strong>item 1</strong>item <span>content</span>A</li>
+  <li><strong>item 2</strong>item <span>content</span>B</li>
+  <li><strong>item 3</strong>item <span>content</span>C</li>
+</ul></textarea>
+        </div>
+        <div id="demo2area"></div>
+        <div>cssText from above CSSOM</div>
+        <textarea id="demo2_text" readonly></textarea>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="demo2.js"></script>
+
+  </body>
+</html>

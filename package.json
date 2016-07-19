@@ -1,0 +1,16 @@
+{
+  "name": "cssobj-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cssobj": "github:cssobj/cssobj",
+    "cssobj-plugin-value-default-unit": "github:cssobj/cssobj-plugin-value-default-unit",
+    "m_drag": "github:mithriljs-cn/m_drag"
+  }
+}
