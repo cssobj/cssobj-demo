@@ -8,7 +8,14 @@ cssobj({
     fontFamily:'Arial, Helvetica',
     fontSize:14,
     lineHeight:1.5,
-    color: '#333333'
+    color: '#333333',
+    paddingBottom:30
+  },
+  h3:{
+    color:'teal'
+  },
+  'h3 span':{
+    fontSize:14
   },
   hr:{
     marginTop:30
@@ -22,6 +29,15 @@ cssobj({
   textarea:{
     width: 768,
     height: 100
+  },
+  '.readonly':{
+    background:'#cecece',
+    height: 150
+  },
+  '@media (max-width:768)':{
+    textarea:{
+      width: '100%'
+    }
   }
 }, {
   local:false,

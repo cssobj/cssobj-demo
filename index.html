@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>CSSOBJ DEMO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!--[if lte IE 9]>
         <script type="text/javascript" src="http://cdn.staticfile.org/es5-shim/3.4.0/es5-shim.min.js"></script>
         <script type="text/javascript" src="http://cdn.staticfile.org/json3/3.3.2/json3.min.js"></script>
@@ -14,13 +15,13 @@
   <body>
     <h1>cssobj demo page</h1>
 
-    <h3>DEMO 1.Box size adjustment</h3>
+    <h3>DEMO 1.Box size adjustment <span>(with <a href="https://github.com/cssobj/cssobj-plugin-value-default-unit" target="_blank">default-unit</a> plugin)</span></h3>
     <div>
       <div class="demo1_con">
         <div class="demo1_input">
-          <label>constrain:<input style="width:20px" type="checkbox" onclick="toggleDemo1Height()"></label>
-          width: <input type="number" onkeyup="demo1obj['.box'].width = this.value; demo1css.update()" value="30">
-          <span>height: <input id="demo1_height" type="number" onkeyup="demo1obj['.box'].height = this.value; demo1css.update()" value="30"></span>
+          <label>lock ratio:<input style="width:20px" type="checkbox" onclick="toggleDemo1Height()"></label>
+          width: <input type="number" oninput="demo1obj['.box'].width = this.value; demo1css.update()" onblur="demo1obj['.box'].width = this.value; demo1css.update()" value="30">
+          <span>height: <input id="demo1_height" type="number" oninput="demo1obj['.box'].height = this.value; demo1css.update()" onblur="demo1obj['.box'].height = this.value; demo1css.update()" value="30"></span>
         </div>
         <div class="demo1area">
           <div class="demo1_box"></div>
@@ -31,7 +32,7 @@
           <br clear="both">
         </div>
         <div>cssText from above CSSOM</div>
-        <textarea id="demo1_text" readonly></textarea>
+        <textarea id="demo1_text" readonly class="readonly"></textarea>
       </div>
     </div>
     <script type="text/javascript" src="demo1.js"></script>
@@ -41,23 +42,56 @@
     <div>
       <div class="demo2_con">
         <div class="demo2_input">
-          <div>CSS</div>
-          <textarea id="demo2_obj" readonly style="height:222px"></textarea>
           <div>HTML</div>
-          <textarea id="demo2_html" readonly>
+          <textarea id="demo2_html" readonly class="readonly">
 <ul>
   <li><strong>item 1</strong>item <span>content</span>A</li>
   <li><strong>item 2</strong>item <span>content</span>B</li>
   <li><strong>item 3</strong>item <span>content</span>C</li>
 </ul></textarea>
+          <div>CSS (<strong>try to change!</strong>)</div>
+          <textarea id="demo2_obj" style="height:222px"></textarea>
         </div>
         <div id="demo2area"></div>
         <div>cssText from above CSSOM</div>
-        <textarea id="demo2_text" readonly></textarea>
+        <textarea id="demo2_text" readonly class="readonly"></textarea>
       </div>
     </div>
-
     <script type="text/javascript" src="demo2.js"></script>
+
+    <hr>
+    <h3>DEMO 3.@media rule in iframe page (Modern & Old Browsers)</h3>
+    <div>iframe width: <input id="demo3_input" onblur="$('mediaIframe').width=this.value" value="320">
+      <a href="javascript:;" onclick="$('demo3_input').value = $('mediaIframe').width=300">300</a>
+      <a href="javascript:;" onclick="$('demo3_input').value = $('mediaIframe').width=400">400</a>
+      <a href="javascript:;" onclick="$('demo3_input').value = $('mediaIframe').width=500">500</a>
+      <br>or <a href="play/" target="_blank">open in new window</a></div>
+    <div>
+      <iframe src="play/" width="320" height="600" id="mediaIframe" style="border:1px solid black; margin-top:10px;" marginwidth="0" marginheight="0" hspace="0" vspace="0" frameborder="0" scrolling="no"></iframe>
+    </div>
+
+    <hr>
+    <h3>DEMO 4.Local Class names</h3>
+    <div>
+      <div>CSS (<strong>try to change!</strong>)</div>
+      <textarea id="demo4_obj" style="height:200px"></textarea>
+      <div>cssText from above CSSOM</div>
+      <textarea id="demo4_text" readonly class="readonly" style="height:150px"></textarea>
+    </div>
+    <script type="text/javascript" src="demo4.js"></script>
+
+    <hr>
+    <h3>DEMO 5.Set css prop using function</h3>
+    <strong>box1 have same width & height<br>
+      box3's height is twice of box1<br>
+      box2's height is sum of box1 & 3<br><br>
+    <div>
+      <div>CSS (<strong>try to change!</strong>)</div>
+      <textarea id="demo5_obj" style="height:250px"></textarea>
+      <div>cssText from above CSSOM</div>
+      <textarea id="demo5_text" readonly class="readonly" style="height:150px"></textarea>
+    </div>
+    <script type="text/javascript" src="demo5.js"></script>
 
   </body>
 </html>
