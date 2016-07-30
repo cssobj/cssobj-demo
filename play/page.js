@@ -20,8 +20,8 @@ var pagecss = cssobj(
     },
     textarea:{
       width:'100%',
-      height:function(prev, node, ref) {
-        return ref.con.lastVal.height
+      height:function(prev, node, result) {
+        return result.ref.con.lastVal.height
       },
       padding:2,
       border:'1px solid black'

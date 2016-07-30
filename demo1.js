@@ -12,14 +12,14 @@ var demo1obj = {
 }
 
 var demo1css = cssobj(demo1obj, {
-  prefix:'demo1_',
+  local:{prefix:'demo1_'},
   plugins:{
     value:cssobj_plugin_value_default_unit()
-  }
+  },
+  onUpdate: updateDiff('demo1_diff')
 })
 
 addPluginDisplayCSS(demo1css, 'demo1_text')
-
 
 function toggleDemo1Height() {
   var box = demo1obj['.box']

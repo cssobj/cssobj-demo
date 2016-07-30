@@ -23,16 +23,16 @@ var demo5obj = {
   '.box1':{
     $id:'box1',
     width:10,
-    height: 'function(prev,node,ref) {return this.width}'
+    height: 'function(prev,node,result) {return this.width}'
   },
   '.box2':{
     $order:2,
-    height: 'function(prev,node,ref) {return ref.box1.lastVal.height + ref.box3.lastVal.height}'
+    height: 'function(prev,node,result) {return result.ref.box1.lastVal.height + result.ref.box3.lastVal.height}'
   },
   '.box3':{
     $id:'box3',
     $order:1,
-    height: 'function(prev,node,ref) {return ref.box1.lastVal.width*2}'
+    height: 'function(prev,node,result) {return result.ref.box1.lastVal.width*2}'
   }
 }
 
@@ -40,7 +40,8 @@ var demo5obj = {
 var demo5css = cssobj({}, {
   plugins:{
     value:cssobj_plugin_value_default_unit()
-  }
+  },
+  onUpdate: updateDiff('demo5_diff')
 })
 
 addPluginDisplayCSS(demo5css, 'demo5_text')

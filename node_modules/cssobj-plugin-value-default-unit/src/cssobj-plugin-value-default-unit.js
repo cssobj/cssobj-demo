@@ -1,6 +1,6 @@
 // cssobj value plugin
 
-import {dashify} from '../node_modules/cssobj-helper/lib/cssobj-helper.js'
+import {dashify} from '../../cssobj-helper/lib/cssobj-helper.js'
 
 var unitless = [
   "animation-iteration-count",

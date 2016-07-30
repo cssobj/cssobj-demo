@@ -14,8 +14,8 @@
   </head>
   <body>
     <h1>cssobj demo page</h1>
-
-    <h3>DEMO 1.Box size adjustment <span>(with <a href="https://github.com/cssobj/cssobj-plugin-value-default-unit" target="_blank">default-unit</a> plugin)</span></h3>
+    <a name="demo1" id="demo1"></a>
+    <h3>DEMO 1. Box size adjustment <span>(with <a href="https://github.com/cssobj/cssobj-plugin-value-default-unit" target="_blank">default-unit</a> plugin)</span></h3>
     <div>
       <div class="demo1_con">
         <div class="demo1_input">
@@ -32,13 +32,15 @@
           <br clear="both">
         </div>
         <div>cssText from above CSSOM</div>
+        <div id="demo1_diff" class="diff"></div>
         <textarea id="demo1_text" readonly class="readonly"></textarea>
       </div>
     </div>
     <script type="text/javascript" src="demo1.js"></script>
 
     <hr>
-    <h3>DEMO 2.child selector</h3>
+    <a name="demo2" id="demo2"></a>
+    <h3>DEMO 2. child selector</h3>
     <div>
       <div class="demo2_con">
         <div class="demo2_input">
@@ -54,13 +56,15 @@
         </div>
         <div id="demo2area"></div>
         <div>cssText from above CSSOM</div>
+        <div id="demo2_diff" class="diff"></div>
         <textarea id="demo2_text" readonly class="readonly"></textarea>
       </div>
     </div>
     <script type="text/javascript" src="demo2.js"></script>
 
     <hr>
-    <h3>DEMO 3.@media rule in iframe page (Modern & Old Browsers)</h3>
+    <a name="demo3" id="demo3"></a>
+    <h3>DEMO 3. @media rule in iframe page (Modern & IE 5+, except IE6)</h3>
     <div>iframe width: <input id="demo3_input" onblur="$('mediaIframe').width=this.value" value="320">
       <a href="javascript:;" onclick="$('demo3_input').value = $('mediaIframe').width=300">300</a>
       <a href="javascript:;" onclick="$('demo3_input').value = $('mediaIframe').width=400">400</a>
@@ -71,17 +75,20 @@
     </div>
 
     <hr>
-    <h3>DEMO 4.Local Class names</h3>
+    <a name="demo4" id="demo4"></a>
+    <h3>DEMO 4. Local Class names</h3>
     <div>
       <div>CSS (<strong>try to change!</strong>)</div>
       <textarea id="demo4_obj" style="height:200px"></textarea>
       <div>cssText from above CSSOM</div>
+      <div id="demo4_diff" class="diff"></div>
       <textarea id="demo4_text" readonly class="readonly" style="height:150px"></textarea>
     </div>
     <script type="text/javascript" src="demo4.js"></script>
 
     <hr>
-    <h3>DEMO 5.Set css prop using function</h3>
+    <a name="demo5" id="demo5"></a>
+    <h3>DEMO 5. Set css prop using function</h3>
     <strong>box1 have same width & height<br>
       box3's height is twice of box1<br>
       box2's height is sum of box1 & 3<br><br>
@@ -89,6 +96,7 @@
       <div>CSS (<strong>try to change!</strong>)</div>
       <textarea id="demo5_obj" style="height:250px"></textarea>
       <div>cssText from above CSSOM</div>
+      <div id="demo5_diff" class="diff"></div>
       <textarea id="demo5_text" readonly class="readonly" style="height:150px"></textarea>
     </div>
     <script type="text/javascript" src="demo5.js"></script>

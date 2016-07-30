@@ -1,7 +1,5 @@
 'use strict';
 
-// helper functions for cssobj
-
 // convert js prop into css prop (dashified)
 function dashify(str) {
   return str.replace(/[A-Z]/g, function(m) {

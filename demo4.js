@@ -12,7 +12,7 @@ var demo4obj = {
 }
 
 
-var demo4css = cssobj(demo4obj)
+var demo4css = cssobj(demo4obj, {local:true, onUpdate: updateDiff('demo4_diff')})
 
 addPluginDisplayCSS(demo4css, 'demo4_text')
 

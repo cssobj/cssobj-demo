@@ -11,6 +11,9 @@ cssobj({
     color: '#333333',
     paddingBottom:30
   },
+  '.diff':{
+    fontWeight:'bold'
+  },
   h3:{
     color:'teal'
   },
@@ -94,4 +97,30 @@ document.onkeydown = function(event) {
     if(key==38) el.value = old+1
     if(key==40) el.value = old-1
   }
+}
+
+
+function updateDiff(diffID) {
+
+  return function (result) {
+    if(!result.diff) return
+    var el = $(diffID)
+    var str = ''
+    if(result.diff.changed) str += '[changed]'+result.diff.changed.map(function(v) {
+      var s = v.selText || v.groupText
+      s += '('
+      s+= v.diff.changed ? ' * ' + v.diff.changed : ''
+      s+= v.diff.added ? ' + ' + v.diff.added : ''
+      s+= v.diff.removed ? ' - ' + v.diff.removed : ''
+      return s + ')'
+    })
+    if(result.diff.removed) str += '[removed]' + result.diff.removed.map(function(v) {
+      return v.selText || v.groupText
+    })
+    if(result.diff.added) str += '[added]' + result.diff.added.map(function(v) {
+      return v.selText || v.groupText
+    })
+    if(str) el.innerHTML = 'DIFF RESULT '+str
+  }
+
 }
