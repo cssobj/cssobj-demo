@@ -9,7 +9,7 @@
   "license": "MIT",
   "dependencies": {
     "cssobj": "github:cssobj/cssobj",
-    "cssobj-plugin-post-csstext": "^1.0.5",
+    "cssobj-plugin-post-csstext": "^1.0.6",
     "react": "^0.13.3"
   },
   "devDependencies": {
