@@ -4,7 +4,7 @@
   "description": "demo for cssobj",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "make": "uglifyjs button/bundle.js -o button/bundle.js"
   },
   "repository": {
     "type": "git",
