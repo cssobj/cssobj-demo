@@ -21320,6 +21320,7 @@
 	function cssobj_plugin_post_csstext(callback) {
 
 	  var cb = function(str) {
+	    str = str.replace(/^\s*html\s*{[ \t\n\r]*}[\n\r]*/gmi, '').replace(/^\s*body\s*{[ \t\n\r]*}[\n\r]*/gmi, '')
 	    typeof callback=='function' && callback(str)
 	  }
 
@@ -21347,6 +21348,7 @@
 	}
 
 	module.exports = cssobj_plugin_post_csstext;
+
 
 /***/ }
 /******/ ]);
