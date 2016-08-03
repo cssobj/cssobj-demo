@@ -73,7 +73,9 @@
 	    textAlign: 'center'
 	  },
 	  '.button': {
+	    // auto vendor prefix below
 	    appearance: 'none',
+	    boxReflect: 'below 4px linear-gradient(transparent, white)',
 	    backgroundColor: '#ff0000',
 	    width: '320px',
 	    padding: '20px',
@@ -21320,7 +21322,11 @@
 	function cssobj_plugin_post_csstext(callback) {
 
 	  var cb = function(str) {
-	    str = str.replace(/^\s*html\s*{\s*}\s*/i, '').replace(/^\s*body\s*{\s*}\s*/i, '')
+	    // replace empty html & body for IE
+	    str = str
+	      .replace(/^\s*html\s*{\s*}\s*/i, '')
+	      .replace(/^\s*body\s*{\s*}\s*/i, '')
+
 	    typeof callback=='function' && callback(str)
 	  }
 
@@ -21348,7 +21354,6 @@
 	}
 
 	module.exports = cssobj_plugin_post_csstext;
-
 
 /***/ }
 /******/ ]);

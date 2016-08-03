@@ -7,7 +7,9 @@ const obj = {
     textAlign: 'center'
   },
   '.button':{
+    // auto vendor prefix below
     appearance: 'none',
+    boxReflect: 'below 4px linear-gradient(transparent, white)',
     backgroundColor: '#ff0000',
     width: '320px',
     padding: '20px',
