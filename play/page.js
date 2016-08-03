@@ -32,7 +32,7 @@ var pagecss = cssobj(
     '@media (min-width:350)': {
       '.text':{
         width: function() {
-          return winWidth/2 - 4 + 'px'
+          return winWidth ? winWidth/2 - 4 + 'px' : ''
         }
       },
       '.csstext':{

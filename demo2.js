@@ -1,6 +1,10 @@
 var demo2obj = {
   ul:{
     listStyleType: 'disc',
+    // for IE
+    imeMode: 'auto',
+    transform:'scale(0.8)',
+    borderImage: 'none',
     li:{
       color:'#999',
       'span,strong':{
@@ -23,7 +27,7 @@ $('demo2_obj').value = JSON.stringify(demo2obj, null, 2)
 $('demo2_obj').onkeyup = function() {
   try{
     demo2obj = JSON.parse(this.value)
+  }catch(e){}
     demo2css.obj = demo2obj
     demo2css.update()
-  }catch(e){}
 }
