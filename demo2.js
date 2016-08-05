@@ -1,8 +1,11 @@
 var demo2obj = {
   ul:{
     listStyleType: 'disc',
+    flex:1,
+    display:'flex',
     // for IE
     imeMode: 'auto',
+    background: ['-webkit-linear-gradient(grey, white)', 'linear-gradient(grey, white)'],
     transform:'scale(0.8)',
     borderImage: 'none',
     li:{
@@ -24,10 +27,13 @@ addPluginDisplayCSS(demo2css, 'demo2_text')
 $('demo2area').innerHTML = $('demo2_html').value
 $('demo2_obj').value = JSON.stringify(demo2obj, null, 2)
 
-$('demo2_obj').onkeyup = function() {
+
+function updateDemo2() {
   try{
-    demo2obj = JSON.parse(this.value)
+    (new Function('demo2css.obj=' + $('demo2_obj').value))()
   }catch(e){}
-    demo2css.obj = demo2obj
     demo2css.update()
 }
+
+$('demo2_obj').onkeyup = updateDemo2
+updateDemo2()

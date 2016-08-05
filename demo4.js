@@ -18,10 +18,12 @@ addPluginDisplayCSS(demo4css, 'demo4_text')
 
 $('demo4_obj').value = JSON.stringify(demo4obj, null, 2)
 
-$('demo4_obj').onkeyup = function() {
+function updateDemo4() {
   try{
-    demo4obj = JSON.parse(this.value)
-    demo4css.obj = demo4obj
-    demo4css.update()
+    (new Function('demo4css.obj=' + $('demo4_obj').value))()
   }catch(e){}
+    demo4css.update()
 }
+
+$('demo4_obj').onkeyup = updateDemo4
+updateDemo4()

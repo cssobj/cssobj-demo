@@ -2,8 +2,8 @@
 
 function updateObj() {
   try{
-    demo5obj = JSON.parse($('demo5_obj').value, parseFunction)
-    demo5css.obj = demo5obj
+    var func = new Function('demo5css.obj='+$('demo5_obj').value)
+    func()
     demo5css.update()
   }catch(e){}
 }
@@ -19,24 +19,6 @@ function parseFunction(k, v) {
   return v
 }
 
-var demo5obj = {
-  '.box1':{
-    $id:'box1',
-    width:10,
-    height: 'function(prev,node,result) {return this.width}'
-  },
-  '.box2':{
-    $order:2,
-    height: 'function(prev,node,result) {return result.ref.box1.lastVal.height + result.ref.box3.lastVal.height}'
-  },
-  '.box3':{
-    $id:'box3',
-    $order:1,
-    height: 'function(prev,node,result) {return result.ref.box1.lastVal.width*2}'
-  }
-}
-
-
 var demo5css = cssobj({}, {
   plugins:{
     value:cssobj_plugin_value_default_unit()
@@ -45,8 +27,6 @@ var demo5css = cssobj({}, {
 })
 
 addPluginDisplayCSS(demo5css, 'demo5_text')
-
-$('demo5_obj').value = JSON.stringify(demo5obj, null, 2)
 
 $('demo5_obj').onkeyup = updateObj
 
