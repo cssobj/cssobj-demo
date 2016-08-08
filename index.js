@@ -64,7 +64,7 @@ function getCSSText(dom) {
   if(sheet.cssText) return sheet.cssText
   var str = ''
   var rules = sheet.cssRules || sheet.rules
-  for(var i = 1, len = rules.length; i < len; i++) {
+  for(var i = 0, len = rules.length; i < len; i++) {
     str += rules[i].cssText + '\n'
   }
   return str
