@@ -20,9 +20,9 @@ function parseFunction(k, v) {
 }
 
 var demo5css = cssobj({}, {
-  plugins:{
-    value:cssobj_plugin_value_default_unit()
-  },
+  plugins:[
+    cssobj_plugin_default_unit()
+  ],
   onUpdate: updateDiff('demo5_diff')
 })
 

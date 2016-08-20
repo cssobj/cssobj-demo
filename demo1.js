@@ -13,9 +13,9 @@ var demo1obj = {
 
 var demo1css = cssobj(demo1obj, {
   local:{prefix:'demo1_'},
-  plugins:{
-    value:cssobj_plugin_value_default_unit()
-  },
+  plugins:[
+    cssobj_plugin_default_unit()
+  ],
   onUpdate: updateDiff('demo1_diff')
 })
 

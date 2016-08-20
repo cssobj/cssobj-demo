@@ -44,17 +44,17 @@ cssobj({
   }
 }, {
   local:false,
-  plugins:{
-    value:cssobj_plugin_value_default_unit()
-  }
+  plugins:[
+    cssobj_plugin_default_unit()
+  ]
 })
 
 function addPluginDisplayCSS (cssID, textID) {
-  cssID.options.plugins.post.push(function (result) {
+  cssID.options.plugins.push({post: function (result) {
     var el = $(textID)
     if(el) el.value = getCSSText(result.cssdom)
     return result
-  })
+  }})
   cssID.update()
 }
 

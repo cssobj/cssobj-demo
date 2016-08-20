@@ -9,9 +9,9 @@ var demo_animobj = {
 
 var demo_animcss = cssobj(demo_animobj, {
   local:{prefix:'demo-anim-'},
-  plugins:{
-    value:cssobj_plugin_value_default_unit()
-  },
+  plugins:[
+    cssobj_plugin_default_unit()
+  ],
   onUpdate: updateDiff('demo_anim_diff')
 }, {left: 10})
 
