@@ -7,7 +7,7 @@ cssobj({
   body:{
     fontFamily:'Arial, Helvetica',
     fontSize:14,
-    lineHeight:1.5,
+    lineHeight: '1.5',
     color: '#333333',
     paddingBottom:30
   },

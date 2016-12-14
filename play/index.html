@@ -8,19 +8,16 @@
         <script type="text/javascript" src="http://cdn.staticfile.org/es5-shim/3.4.0/es5-shim.min.js"></script>
         <script type="text/javascript" src="http://cdn.staticfile.org/json3/3.3.2/json3.min.js"></script>
         <![endif]-->
-    <script type="text/javascript" src="../node_modules/cssobj/dist/cssobj.iife.js"></script>
-    <script type="text/javascript" src="../node_modules/cssobj-plugin-value-default-unit/dist/cssobj-plugin-value-default-unit.iife.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/cssobj@0.7.3/dist/cssobj.iife.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/cssobj-plugin-default-unit@2.3.1/dist/cssobj-plugin-default-unit.iife.js"></script>
     <script type="text/javascript" src="./browser-detection.js"></script>
   </head>
   <body>
     <div id="hr"></div>
     <div id="size"></div>
-    <h3>LOVE CSSOBJ<br>
-      <span>
-        Browser:
-<!--[if IE 7]>IE 7<![endif]-->
-<!--[if IE 6]>IE 6<![endif]-->
-<!--[if IE 5]>IE 5<![endif]-->
+    <h3>
+      LOVE CSSOBJ<br><span>
+          Browser:
       </span>
     </h3>
 
@@ -68,7 +65,7 @@
     </div>
 <script type="text/javascript" src="./page.js"></script>
 <script type="text/javascript">
-var result = cssobj({},{plugins: {value: cssobj_plugin_value_default_unit()}})
+var result = cssobj({},{plugins: [cssobj_plugin_default_unit()]})
 var objDom = document.getElementById('obj')
 
 function updateCSSText() {
