@@ -8,7 +8,7 @@ var demo_animobj = {
 }
 
 var demo_animcss = cssobj(demo_animobj, {
-  local:{prefix:'demo-anim-'},
+  local:{space:'_demo-anim_'},
   plugins:[
     cssobj_plugin_default_unit()
   ],
@@ -19,7 +19,7 @@ addPluginDisplayCSS(demo_animcss, 'demo_anim_text')
 
 function demo_anim_runner() {
   var box = demo_animobj['.box']
-  var data = demo_animcss.data
+  var data = demo_animcss.state
   data.left += data.dir || 1
   if(data.left>500) data.dir=-1
   if(data.left<0) data.dir=1

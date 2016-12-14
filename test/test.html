@@ -13,26 +13,31 @@
     <script type="text/javascript" src="../node_modules/cssobj-plugin-gencss/dist/cssobj-plugin-gencss.iife.js"></script>
     <script type="text/javascript" src="../node_modules/cssobj-plugin-csstext/dist/cssobj-plugin-csstext.iife.js"></script>
     <h3>conditional apply css from js</h3>
+    <div class="page1"><p>Page1's css is now alive.</p></div>
+    <div class="page2"><p>Page2's css is now alive.</p></div>
     <input type="button" onclick="page=1; update()" value="Page1">
     <input type="button" onclick="page=2; update()" value="Page2">
     <textarea id="src" style="height:220px">
 {
+  '.page1, .page2':{ display:'none', border:'1px dashed grey' },
   '.page1':{
     $test: getPage,
+    display: 'block',
     p:{
       color:'red'
     }
   },
   '.page2':{
     $test: getPage,
+    display: 'block',
     p:{
       color:'blue'
     }
   }
 }
     </textarea>
-    <h4>The CSS:</h4>
-    <textarea id="css"></textarea>
+    <h4>The Result CSS:</h4>
+    <textarea id="css" style="height: 145px"></textarea>
     <h4>The CSSOM:</h4>
     <textarea id="cssom"></textarea>
     <script type="text/javascript">

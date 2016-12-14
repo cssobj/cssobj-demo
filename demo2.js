@@ -20,7 +20,12 @@ var demo2obj = {
   }
 }
 
-var demo2css = cssobj(demo2obj, {onUpdate: updateDiff('demo2_diff')})
+var demo2css = cssobj(demo2obj, {
+  plugins:[
+    cssobj_plugin_flexbox()
+  ],
+  onUpdate: updateDiff('demo2_diff')
+})
 
 addPluginDisplayCSS(demo2css, 'demo2_text')
 

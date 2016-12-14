@@ -10,6 +10,7 @@
     <![endif]-->
     <script type="text/javascript" src="./node_modules/cssobj/dist/cssobj.iife.js"></script>
     <script type="text/javascript" src="./node_modules/cssobj-plugin-default-unit/dist/cssobj-plugin-default-unit.iife.js"></script>
+    <script type="text/javascript" src="./node_modules/cssobj-plugin-flexbox/dist/cssobj-plugin-flexbox.iife.js"></script>
     <script type="text/javascript" src="index.js"></script>
   </head>
   <body>
@@ -27,11 +28,11 @@
           <span>height: <input id="demo1_height" type="number" oninput="demo1obj['.box'].height = this.value; demo1css.update()" onblur="demo1obj['.box'].height = this.value; demo1css.update()" value="30"></span>
         </div>
         <div class="demo1area">
-          <div class="demo1_box"></div>
-          <div class="demo1_box"></div>
-          <div class="demo1_box"></div>
-          <div class="demo1_box"></div>
-          <div class="demo1_box"></div>
+          <div class="box_demo1_"></div>
+          <div class="box_demo1_"></div>
+          <div class="box_demo1_"></div>
+          <div class="box_demo1_"></div>
+          <div class="box_demo1_"></div>
           <br clear="both">
         </div>
         <div>cssText from above CSSOM</div>
@@ -46,9 +47,9 @@
     <h3><a href="#demo-anim">#</a> Animation</h3>
     <div>
         <div class="demo-anim-area">
-          <div class="demo-anim-box demo1_box"></div>
-          <div class="demo-anim-box demo1_box"></div>
-          <div class="demo-anim-box demo1_box"></div>
+          <div class="box_demo-anim_ box_demo1_"></div>
+          <div class="box_demo-anim_ box_demo1_"></div>
+          <div class="box_demo-anim_ box_demo1_"></div>
           <br clear="both">
         </div>
         <div>cssText from above CSSOM</div>
@@ -73,8 +74,8 @@
     </div>
 
     <hr>
-    <a name="demo2" id="demo2"></a>
-    <h3><a href="#demo2">#</a> nested selector + auto vendor prefixer</h3>
+    <a name="demoprefixer" id="demoprefixer"></a>
+    <h3><a href="#demoprefixer">#</a> nested selector + auto vendor prefixer</h3>
     <div>
       <div class="demo2_con">
         <div class="demo2_input">

@@ -12,7 +12,7 @@ var demo1obj = {
 }
 
 var demo1css = cssobj(demo1obj, {
-  local:{prefix:'demo1_'},
+  local:{space:'_demo1_'},
   plugins:[
     cssobj_plugin_default_unit()
   ],
@@ -23,7 +23,7 @@ addPluginDisplayCSS(demo1css, 'demo1_text')
 
 function toggleDemo1Height() {
   var box = demo1obj['.box']
-  if(typeof box.height=='function'){
+  if(typeof box.height=='function') {
     box.height = box.width
     $('demo1_height').parentNode.style.display = 'inline'
     $('demo1_height').value = box.width
